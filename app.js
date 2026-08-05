@@ -70,8 +70,8 @@ class GridHeatLayer {
   constructor(cells) {
     this.cells = cells;
     this.canvas = null;
-    this._onRedraw = this._redraw.bind(this);
     this._raf = null;
+    this._spriteCache = new Map();
   }
 
   addTo(map) {
@@ -82,14 +82,16 @@ class GridHeatLayer {
       pointerEvents: "none", zIndex: 400,
     });
     map.getContainer().appendChild(this.canvas);
-    map.on("move zoom resize", this._scheduleRedraw, this);
+    // Redraw only once movement/zoom has settled — never mid-animation — so a
+    // few thousand blits never compete with the map's own pan/zoom rendering.
+    map.on("moveend zoomend resize", this._scheduleRedraw, this);
     this._redraw();
     return this;
   }
 
   remove() {
     if (!this.map) return;
-    this.map.off("move zoom resize", this._scheduleRedraw, this);
+    this.map.off("moveend zoomend resize", this._scheduleRedraw, this);
     this.canvas.remove();
     this.map = null;
   }
@@ -102,6 +104,31 @@ class GridHeatLayer {
     });
   }
 
+  // A soft radial-gradient disc, pre-rendered once per (bucketed) color and
+  // reused via drawImage — avoids building a canvas gradient + running a
+  // blur filter on every redraw, which is what caused real hangs on slower
+  // devices/browsers.
+  _getSprite(price) {
+    const bucketed = Math.round(price * 50) / 50; // ~0.02 €/l steps
+    const color = colorScale(bucketed);
+    let sprite = this._spriteCache.get(color);
+    if (sprite) return sprite;
+    const s = 128;
+    sprite = document.createElement("canvas");
+    sprite.width = s;
+    sprite.height = s;
+    const sctx = sprite.getContext("2d");
+    const [r, g, b] = hexToRgb(color);
+    const grad = sctx.createRadialGradient(s / 2, s / 2, 0, s / 2, s / 2, s / 2);
+    grad.addColorStop(0, `rgba(${r},${g},${b},0.9)`);
+    grad.addColorStop(0.55, `rgba(${r},${g},${b},0.55)`);
+    grad.addColorStop(1, `rgba(${r},${g},${b},0)`);
+    sctx.fillStyle = grad;
+    sctx.fillRect(0, 0, s, s);
+    this._spriteCache.set(color, sprite);
+    return sprite;
+  }
+
   _redraw() {
     if (!this.map) return;
     const size = this.map.getSize();
@@ -109,37 +136,45 @@ class GridHeatLayer {
     this.canvas.height = size.y;
     this.canvas.style.width = size.x + "px";
     this.canvas.style.height = size.y + "px";
+    const ctx = this.canvas.getContext("2d");
+    ctx.imageSmoothingEnabled = false;
+    ctx.clearRect(0, 0, size.x, size.y);
 
-    if (!this._offscreen) this._offscreen = document.createElement("canvas");
-    this._offscreen.width = size.x;
-    this._offscreen.height = size.y;
-    const octx = this._offscreen.getContext("2d");
-    octx.clearRect(0, 0, size.x, size.y);
+    // One shared meters-per-pixel figure (map-center latitude) instead of a
+    // per-cell cos() call — plenty accurate for a soft 10 km glow.
+    const zoom = this.map.getZoom();
+    const centerLat = this.map.getCenter().lat;
+    const metersPerPixel = (156543.03392 * Math.cos((centerLat * Math.PI) / 180)) / Math.pow(2, zoom);
+    const baseRadiusPx = Math.max(4, (10000 / metersPerPixel) * 1.1);
 
-    // Paint each grid cell as a solid, slightly overlapping disc — a blocky mosaic
-    // with no alpha-stacking artifacts — then blur the whole raster once so it
-    // reads as one continuous gradient instead of a pile of translucent dots.
-    let maxRadiusPx = 8;
+    const bounds = { minX: -60, minY: -60, maxX: size.x + 60, maxY: size.y + 60 };
+    const visible = [];
     for (const cell of this.cells) {
       const p = this.map.latLngToContainerPoint([cell.lat, cell.lon]);
-      if (p.x < -60 || p.y < -60 || p.x > size.x + 60 || p.y > size.y + 60) continue;
-      const metersPerPixel =
-        (156543.03392 * Math.cos((cell.lat * Math.PI) / 180)) / Math.pow(2, this.map.getZoom());
-      const radiusPx = Math.max(4, (10000 / metersPerPixel) * 0.75);
-      maxRadiusPx = Math.max(maxRadiusPx, radiusPx);
-      octx.fillStyle = colorScale(cell.price_eur_per_l);
-      octx.beginPath();
-      octx.arc(p.x, p.y, radiusPx, 0, Math.PI * 2);
-      octx.fill();
+      if (p.x < bounds.minX || p.y < bounds.minY || p.x > bounds.maxX || p.y > bounds.maxY) continue;
+      visible.push(p.x, p.y, cell.price_eur_per_l);
     }
 
-    const ctx = this.canvas.getContext("2d");
-    ctx.clearRect(0, 0, size.x, size.y);
-    ctx.filter = `blur(${Math.round(maxRadiusPx * 0.5)}px)`;
-    ctx.globalAlpha = 0.82;
-    ctx.drawImage(this._offscreen, 0, 0);
-    ctx.filter = "none";
-    ctx.globalAlpha = 1;
+    // Cap how many discs we ever blit per frame so this stays fast on weak
+    // hardware/mobile instead of stalling the main thread. At high zoom the
+    // visible set is naturally small (stride 1, full detail); only wide,
+    // zoomed-out views fall back to a coarser, proportionally bigger-radius
+    // subsample so coverage stays gap-free.
+    const nVisible = visible.length / 3;
+    const MAX_CELLS = 2200;
+    const stride = Math.max(1, Math.ceil(nVisible / MAX_CELLS));
+    const radiusPx = baseRadiusPx * stride;
+
+    for (let i = 0; i < nVisible; i += stride) {
+      const sprite = this._getSprite(visible[i * 3 + 2]);
+      ctx.drawImage(
+        sprite,
+        visible[i * 3] - radiusPx,
+        visible[i * 3 + 1] - radiusPx,
+        radiusPx * 2,
+        radiusPx * 2
+      );
+    }
   }
 }
 
