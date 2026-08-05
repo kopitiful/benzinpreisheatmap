@@ -33,7 +33,7 @@ def curl_get(url: str, timeout: int) -> bytes:
 ROOT = Path(__file__).resolve().parent.parent
 GEO_PATH = ROOT / "data" / "geo" / "regions_fr_es_it.geojson"
 OUT_PATH = ROOT / "data" / "regional_prices.json"
-HEATMAP_OUT_PATH = ROOT / "data" / "heatmap_points.json"
+HEATMAP_OUT_PATH = ROOT / "data" / "finegrid_prices.json"
 
 RADIUS_KM = 10
 GRID_SPACING_DEG = 0.1

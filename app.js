@@ -219,44 +219,63 @@ function bindRegionInteractions(layer) {
 }
 
 async function showRegions(countryCode, clickedLayer) {
-  if (!regionPrices) {
-    const res = await fetch("data/regional_prices.json");
-    regionPrices = await res.json();
-  }
-  if (!window._regionsGeoJson) {
-    const res = await fetch("data/geo/regions_fr_es_it.geojson");
-    window._regionsGeoJson = await res.json();
-  }
-  const full = window._regionsGeoJson;
-  const subset = {
-    type: "FeatureCollection",
-    features: full.features.filter((f) => f.properties.id.startsWith(countryCode)),
-  };
+  metaText.textContent = "Lade Regionsdaten …";
+  try {
+    if (!regionPrices) {
+      const res = await fetch("data/regional_prices.json");
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      regionPrices = await res.json();
+    }
+    if (!window._regionsGeoJson) {
+      const res = await fetch("data/geo/regions_fr_es_it.geojson");
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      window._regionsGeoJson = await res.json();
+    }
+    const full = window._regionsGeoJson;
+    const subset = {
+      type: "FeatureCollection",
+      features: full.features.filter((f) => f.properties.id.startsWith(countryCode)),
+    };
 
-  map.removeLayer(countryLayer);
-  regionLayer = L.geoJSON(subset, { style: styleRegion });
-  regionLayer.eachLayer(bindRegionInteractions);
-  regionLayer.addTo(map);
-  map.fitBounds(regionLayer.getBounds(), { padding: [30, 30] });
+    map.removeLayer(countryLayer);
+    regionLayer = L.geoJSON(subset, { style: styleRegion });
+    regionLayer.eachLayer(bindRegionInteractions);
+    regionLayer.addTo(map);
+    map.fitBounds(regionLayer.getBounds(), { padding: [30, 30] });
 
-  currentRegionCountry = countryCode;
-  backBtn.style.display = "inline-block";
-  heatToggleBtn.style.display = "inline-block";
-  heatToggleBtn.textContent = "Feinauflösung (10 km)";
+    currentRegionCountry = countryCode;
+    backBtn.style.display = "inline-block";
+    heatToggleBtn.style.display = "inline-block";
+    heatToggleBtn.textContent = "Feinauflösung (10 km)";
+    metaText.textContent = `Stand ${countryPrices.date} · Quelle: EU Weekly Oil Bulletin`;
+  } catch (err) {
+    console.error("Regionsdaten konnten nicht geladen werden:", err);
+    metaText.textContent = "Regionsdaten konnten nicht geladen werden — bitte Seite neu laden.";
+  }
 }
 
 async function showHeat(countryCode) {
-  if (!heatmapData) {
-    const res = await fetch("data/heatmap_points.json");
-    heatmapData = await res.json();
+  heatToggleBtn.disabled = true;
+  heatToggleBtn.textContent = "Lädt …";
+  try {
+    if (!heatmapData) {
+      const res = await fetch("data/finegrid_prices.json");
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      heatmapData = await res.json();
+    }
+    const cells = heatmapData.cells[countryCode] || [];
+    if (regionLayer) {
+      map.removeLayer(regionLayer);
+      regionLayer = null;
+    }
+    heatLayer = new GridHeatLayer(cells).addTo(map);
+    heatToggleBtn.textContent = "Regionen anzeigen";
+  } catch (err) {
+    console.error("Feinauflösung konnte nicht geladen werden:", err);
+    heatToggleBtn.textContent = "Feinauflösung (10 km) — Fehler beim Laden, erneut versuchen";
+  } finally {
+    heatToggleBtn.disabled = false;
   }
-  const cells = heatmapData.cells[countryCode] || [];
-  if (regionLayer) {
-    map.removeLayer(regionLayer);
-    regionLayer = null;
-  }
-  heatLayer = new GridHeatLayer(cells).addTo(map);
-  heatToggleBtn.textContent = "Regionen anzeigen";
 }
 
 function backToRegions(countryCode) {

@@ -20,7 +20,7 @@ Einzeltankstellenpreisen.
 - **10-km-Feinauflösung** (FR, ES, IT): aus denselben Tankstellendaten wird
   serverseitig ein 0.1°-Gitter berechnet — jede Zelle ist der Durchschnitt
   aller Tankstellen im 10-km-Radius um den Zellmittelpunkt
-  (`data/heatmap_points.json`). Im Browser als geblurte Canvas-Ebene
+  (`data/finegrid_prices.json`). Im Browser als geblurte Canvas-Ebene
   gerendert, keine externe Heatmap-Library.
 - **Kartengrenzen**: [Eurostat GISCO / Nuts2json](https://github.com/eurostat/Nuts2json)
   (CC BY 4.0), NUTS0 (Länder) und NUTS3 (Regionen).
@@ -31,7 +31,7 @@ Einzeltankstellenpreisen.
 index.html, app.js       – die Karte (Leaflet, kein Build-Schritt)
 data/country_prices.json – Länderpreise (generiert)
 data/regional_prices.json– Regionspreise FR/ES/IT (generiert)
-data/heatmap_points.json – 10-km-Gitter FR/ES/IT (generiert)
+data/finegrid_prices.json – 10-km-Gitter FR/ES/IT (generiert)
 data/geo/                – Kartengrenzen (GeoJSON)
 scripts/                 – Python-Scripts zur Datenbeschaffung
 .github/workflows/       – wöchentliche automatische Aktualisierung
