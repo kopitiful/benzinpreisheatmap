@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Benzinpreis-Heatmap Europa (E10)</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<style>
+  :root {
+    color-scheme: light;
+    --surface-1:      #fcfcfb;
+    --page-plane:     #f9f9f7;
+    --text-primary:   #0b0b0b;
+    --text-secondary: #52514e;
+    --muted:          #898781;
+    --border:         rgba(11,11,11,0.10);
+    --sea:            #e4ecf5;
+    --nodata:         #dedcd4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) {
+      color-scheme: dark;
+      --surface-1:      #1a1a19;
+      --page-plane:     #0d0d0d;
+      --text-primary:   #ffffff;
+      --text-secondary: #c3c2b7;
+      --muted:          #898781;
+      --border:         rgba(255,255,255,0.10);
+      --sea:            #14202e;
+      --nodata:         #2c2c2a;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --surface-1:      #1a1a19;
+    --page-plane:     #0d0d0d;
+    --text-primary:   #ffffff;
+    --text-secondary: #c3c2b7;
+    --muted:          #898781;
+    --border:         rgba(255,255,255,0.10);
+    --sea:            #14202e;
+    --nodata:         #2c2c2a;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--page-plane);
+    color: var(--text-primary);
+  }
+
+  #map { position: fixed; inset: 0; background: var(--sea); }
+
+  .panel {
+    position: absolute;
+    z-index: 1000;
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    color: var(--text-primary);
+  }
+
+  #title-panel {
+    top: 16px; left: 16px;
+    padding: 14px 18px;
+    max-width: 340px;
+  }
+  #title-panel h1 { font-size: 17px; margin: 0 0 2px; font-weight: 700; }
+  #title-panel p { font-size: 12.5px; margin: 0; color: var(--text-secondary); line-height: 1.45; }
+  #title-panel .meta { margin-top: 8px; font-size: 11.5px; color: var(--muted); }
+
+  #back-btn {
+    display: none;
+    margin-top: 10px;
+    font-size: 12.5px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-primary);
+    cursor: pointer;
+  }
+  #back-btn:hover { background: var(--page-plane); }
+
+  #legend {
+    bottom: 20px; left: 16px;
+    padding: 12px 16px 14px;
+    font-size: 12px;
+  }
+  #legend .legend-title { font-size: 12.5px; font-weight: 600; margin-bottom: 8px; }
+  #legend .bar {
+    width: 220px; height: 10px; border-radius: 4px;
+    background: linear-gradient(to right, #cde2fb, #86b6ef, #3987e5, #1c5cab, #0d366b);
+    border: 1px solid var(--border);
+  }
+  #legend .scale-labels {
+    display: flex; justify-content: space-between;
+    margin-top: 4px; color: var(--text-secondary); font-size: 11px;
+  }
+  #legend .nodata-row {
+    display: flex; align-items: center; gap: 6px;
+    margin-top: 10px; font-size: 11px; color: var(--text-secondary);
+  }
+  #legend .swatch {
+    width: 12px; height: 12px; border-radius: 3px;
+    background: var(--nodata); border: 1px solid var(--border);
+  }
+
+  .leaflet-tooltip.price-tooltip {
+    background: var(--surface-1);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 12.5px;
+    padding: 6px 9px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .price-tooltip b { font-variant-numeric: tabular-nums; }
+  .price-tooltip .sub { color: var(--text-secondary); font-size: 11px; }
+
+  #table-toggle {
+    margin-top: 8px;
+    margin-left: 8px;
+    font: inherit;
+    font-size: 12.5px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-primary);
+    cursor: pointer;
+  }
+  #table-toggle:hover { background: var(--page-plane); }
+
+  #table-panel {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: var(--page-plane);
+    overflow: auto;
+    padding: 24px;
+  }
+  #table-panel.visible { display: block; }
+  #table-panel table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    font-size: 14px;
+  }
+  #table-panel th, #table-panel td {
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  #table-panel td.price {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+  }
+  #table-panel .close-table {
+    display: block;
+    margin: 0 auto 16px;
+    font: inherit;
+    font-size: 13px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--surface-1);
+    color: var(--text-primary);
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<div id="title-panel" class="panel">
+  <h1>Benzinpreis-Heatmap Europa</h1>
+  <p>Kraftstoff E10 (Euro-super 95), Verbraucherpreis inkl. Steuern. Frankreich, Spanien und Italien klickbar für Regionsebene.</p>
+  <div class="meta" id="meta-text">Lade Daten…</div>
+  <button id="back-btn">← Zurück zur Länderansicht</button>
+  <button id="table-toggle">Als Tabelle</button>
+</div>
+
+<div id="table-panel">
+  <button class="close-table" onclick="document.getElementById('table-panel').classList.remove('visible')">Karte anzeigen</button>
+  <table>
+    <thead><tr><th>Land</th><th>Preis E10</th></tr></thead>
+    <tbody id="table-body"></tbody>
+  </table>
+</div>
+
+<div id="legend" class="panel">
+  <div class="legend-title">Preis in EUR / Liter</div>
+  <div class="bar"></div>
+  <div class="scale-labels">
+    <span id="scale-min">–</span>
+    <span id="scale-max">–</span>
+  </div>
+  <div class="nodata-row"><span class="swatch"></span> Keine Daten</div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="app.js"></script>
+</body>
+</html>
