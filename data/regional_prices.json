@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T19:32:21.663332+00:00",
+  "generated_at": "2026-08-05T20:11:16.399149+00:00",
   "sources": {
     "FR": "https://data.economie.gouv.fr (prix-carburants, E10-Direktwert)",
     "ES": "https://sedeaplicaciones.minetur.gob.es (Gasolina 95 E5, E10 in ES kaum gelabelt)",
@@ -93,7 +93,7 @@
     "FRL02": {
       "name": "Hautes-Alpes",
       "country": "FR",
-      "price_eur_per_l": 2.0049,
+      "price_eur_per_l": 2.0039,
       "n_stations": 31,
       "fuel_used": "E10"
     },
@@ -179,13 +179,6 @@
       "country": "FR",
       "price_eur_per_l": 2.0316,
       "n_stations": 51,
-      "fuel_used": "E10"
-    },
-    "FRJ12": {
-      "name": "Gard",
-      "country": "FR",
-      "price_eur_per_l": 2.0133,
-      "n_stations": 107,
       "fuel_used": "E10"
     },
     "FR104": {
@@ -384,6 +377,13 @@
       "n_stations": 73,
       "fuel_used": "E10"
     },
+    "FRJ12": {
+      "name": "Gard",
+      "country": "FR",
+      "price_eur_per_l": 2.0137,
+      "n_stations": 106,
+      "fuel_used": "E10"
+    },
     "FRJ23": {
       "name": "Haute-Garonne",
       "country": "FR",
@@ -471,8 +471,8 @@
     "FRF31": {
       "name": "Meurthe-et-Moselle",
       "country": "FR",
-      "price_eur_per_l": 2.0435,
-      "n_stations": 64,
+      "price_eur_per_l": 2.0444,
+      "n_stations": 63,
       "fuel_used": "E10"
     },
     "FRM02": {
@@ -786,7 +786,7 @@
     "ES130": {
       "name": "Cantabria",
       "country": "ES",
-      "price_eur_per_l": 1.7576,
+      "price_eur_per_l": 1.7577,
       "n_stations": 166,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
@@ -842,7 +842,7 @@
     "ES512": {
       "name": "Girona",
       "country": "ES",
-      "price_eur_per_l": 1.939,
+      "price_eur_per_l": 1.919,
       "n_stations": 1,
       "fuel_used": "E10"
     },
@@ -856,7 +856,7 @@
     "ES424": {
       "name": "Guadalajara",
       "country": "ES",
-      "price_eur_per_l": 1.75,
+      "price_eur_per_l": 1.7497,
       "n_stations": 87,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
@@ -870,14 +870,14 @@
     "ES241": {
       "name": "Huesca",
       "country": "ES",
-      "price_eur_per_l": 1.704,
+      "price_eur_per_l": 1.7038,
       "n_stations": 112,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
     "ES616": {
       "name": "Jaén",
       "country": "ES",
-      "price_eur_per_l": 1.7161,
+      "price_eur_per_l": 1.716,
       "n_stations": 208,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
@@ -891,7 +891,7 @@
     "ES513": {
       "name": "Lleida",
       "country": "ES",
-      "price_eur_per_l": 1.6489,
+      "price_eur_per_l": 1.6488,
       "n_stations": 166,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
@@ -940,7 +940,7 @@
     "ES113": {
       "name": "Ourense",
       "country": "ES",
-      "price_eur_per_l": 1.7497,
+      "price_eur_per_l": 1.7493,
       "n_stations": 89,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },

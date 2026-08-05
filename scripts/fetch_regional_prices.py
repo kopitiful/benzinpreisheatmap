@@ -11,16 +11,41 @@ import csv
 import io
 import json
 import re
+import subprocess
 import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path
 from statistics import mean
 
+import numpy as np
 import requests
+
+
+def curl_get(url: str, timeout: int) -> bytes:
+    """Fallback for hosts whose TLS config trips up Python's bundled OpenSSL
+    (observed on sedeaplicaciones.minetur.gob.es) but that curl handles fine."""
+    result = subprocess.run(
+        ["curl", "-sL", "--max-time", str(timeout), url],
+        capture_output=True, check=True,
+    )
+    return result.stdout
 
 ROOT = Path(__file__).resolve().parent.parent
 GEO_PATH = ROOT / "data" / "geo" / "regions_fr_es_it.geojson"
 OUT_PATH = ROOT / "data" / "regional_prices.json"
+HEATMAP_OUT_PATH = ROOT / "data" / "heatmap_points.json"
+
+RADIUS_KM = 10
+GRID_SPACING_DEG = 0.1
+MIN_STATIONS_PER_CELL = 1
+
+# Rough mainland+island bounding boxes (lat_min, lat_max, lon_min, lon_max), chosen to
+# exclude far-away territories (e.g. Canary Islands) that aren't in the NUTS3 geometry.
+COUNTRY_BBOX = {
+    "FR": (41.0, 51.5, -5.5, 9.7),
+    "ES": (35.9, 43.9, -9.6, 4.5),
+    "IT": (36.0, 47.2, 6.5, 18.6),
+}
 
 FR_API = "https://data.economie.gouv.fr/api/records/1.0/search/?dataset=prix-des-carburants-en-france-flux-instantane-v2&rows=10000"
 ES_API = "https://sedeaplicaciones.minetur.gob.es/ServiciosRestCarburantes/PreciosCarburantes/EstacionesTerrestres/"
@@ -86,6 +111,7 @@ def fetch_france(region_lookup):
     r.raise_for_status()
     data = r.json()
     by_dept = {}
+    points = []
     for rec in data["records"]:
         f = rec["fields"]
         dept = f.get("departement")
@@ -99,6 +125,10 @@ def fetch_france(region_lookup):
             by_dept[dept]["e10"].append(f["e10_prix"])
         elif f.get("sp95_prix"):
             by_dept[dept]["sp95"].append(f["sp95_prix"])
+        coords = rec.get("geometry", {}).get("coordinates")
+        if coords and len(coords) == 2:
+            lon, lat = coords
+            points.append((lat, lon, price))
 
     out = {}
     unmatched = []
@@ -122,7 +152,7 @@ def fetch_france(region_lookup):
             "price_eur_per_l": round(price, 4),
             "n_stations": n, "fuel_used": fuel,
         }
-    return out, unmatched
+    return out, unmatched, points
 
 
 def parse_es_float(s):
@@ -132,10 +162,14 @@ def parse_es_float(s):
 
 
 def fetch_spain(region_lookup):
-    r = requests.get(ES_API, timeout=TIMEOUT)
-    r.raise_for_status()
-    data = r.json()
+    try:
+        r = requests.get(ES_API, timeout=TIMEOUT)
+        r.raise_for_status()
+        data = r.json()
+    except requests.exceptions.ConnectionError:
+        data = json.loads(curl_get(ES_API, TIMEOUT))
     by_prov = {}
+    points = []
     for rec in data["ListaEESSPrecio"]:
         prov = rec.get("Provincia", "").strip()
         if not prov:
@@ -149,6 +183,13 @@ def fetch_spain(region_lookup):
             by_prov[prov]["e10"].append(e10)
         if e5 is not None:
             by_prov[prov]["e5"].append(e5)
+        try:
+            lat = parse_es_float(rec.get("Latitud", ""))
+            lon = parse_es_float(rec.get("Longitud (WGS84)", ""))
+        except ValueError:
+            lat = lon = None
+        if lat is not None and lon is not None:
+            points.append((lat, lon, e10 if e10 is not None else e5))
 
     out = {}
     unmatched = []
@@ -180,7 +221,7 @@ def fetch_spain(region_lookup):
             "price_eur_per_l": round(price, 4),
             "n_stations": n, "fuel_used": fuel,
         }
-    return out, unmatched
+    return out, unmatched, points
 
 
 def fetch_italy():
@@ -190,6 +231,7 @@ def fetch_italy():
     rp.raise_for_status()
 
     station_province = {}
+    station_coords = {}
     lines = rs.content.decode("utf-8", errors="replace").splitlines()[1:]
     reader = csv.DictReader(lines, delimiter="|")
     for row in reader:
@@ -197,8 +239,15 @@ def fetch_italy():
         impianto = row.get("idImpianto")
         if impianto and prov in IT_PROVINCE_NAME:
             station_province[impianto] = prov
+        try:
+            lat = float(row.get("Latitudine", "").strip())
+            lon = float(row.get("Longitudine", "").strip())
+            station_coords[impianto] = (lat, lon)
+        except (ValueError, AttributeError):
+            pass
 
     by_prov = {}
+    points = []
     lines2 = rp.content.decode("utf-8", errors="replace").splitlines()[1:]
     reader2 = csv.DictReader(lines2, delimiter="|")
     for row in reader2:
@@ -213,6 +262,9 @@ def fetch_italy():
         except (ValueError, AttributeError):
             continue
         by_prov.setdefault(prov, []).append(price)
+        coords = station_coords.get(impianto)
+        if coords:
+            points.append((coords[0], coords[1], price))
 
     out = {}
     for prov, prices in by_prov.items():
@@ -223,7 +275,7 @@ def fetch_italy():
             "n_stations": len(prices),
             "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)",
         }
-    return out
+    return out, points
 
 
 def match_italy(raw_by_code, region_lookup):
@@ -243,20 +295,76 @@ def match_italy(raw_by_code, region_lookup):
     return out, unmatched
 
 
+def haversine_km(lat1, lon1, lat2, lon2):
+    r = 6371.0
+    p1, p2 = np.radians(lat1), np.radians(lat2)
+    dphi = np.radians(lat2 - lat1)
+    dlambda = np.radians(lon2 - lon1)
+    a = np.sin(dphi / 2) ** 2 + np.cos(p1) * np.cos(p2) * np.sin(dlambda / 2) ** 2
+    return 2 * r * np.arcsin(np.sqrt(a))
+
+
+def compute_grid(country, points):
+    if not points:
+        return []
+    lat_min, lat_max, lon_min, lon_max = COUNTRY_BBOX[country]
+    pts = np.array(points, dtype=float)  # lat, lon, price
+    lats, lons, prices = pts[:, 0], pts[:, 1], pts[:, 2]
+
+    grid_lats = np.arange(lat_min, lat_max, GRID_SPACING_DEG)
+    grid_lons = np.arange(lon_min, lon_max, GRID_SPACING_DEG)
+
+    cells = []
+    for glat in grid_lats:
+        # cheap pre-filter by latitude band before the full haversine pass
+        lat_band = np.abs(lats - glat) < (RADIUS_KM / 111.0) + 0.2
+        if not lat_band.any():
+            continue
+        band_lats, band_lons, band_prices = lats[lat_band], lons[lat_band], prices[lat_band]
+        for glon in grid_lons:
+            d = haversine_km(glat, glon, band_lats, band_lons)
+            mask = d <= RADIUS_KM
+            n = int(mask.sum())
+            if n < MIN_STATIONS_PER_CELL:
+                continue
+            cells.append((round(float(glat), 3), round(float(glon), 3),
+                           round(float(band_prices[mask].mean()), 3), n))
+    return cells
+
+
 def main():
     lookup = load_region_names()
 
-    fr, fr_unmatched = fetch_france(lookup["FR"])
+    fr, fr_unmatched, fr_points = fetch_france(lookup["FR"])
     print(f"FR: {len(fr)}/96 Departements befuellt, unmatched: {fr_unmatched}")
 
-    es, es_unmatched = fetch_spain(lookup["ES"])
+    es, es_unmatched, es_points = fetch_spain(lookup["ES"])
     print(f"ES: {len(es)}/52 Provinzen befuellt, unmatched: {es_unmatched}")
 
-    it_raw = fetch_italy()
+    it_raw, it_points = fetch_italy()
     it, it_unmatched = match_italy(it_raw, lookup["IT"])
     print(f"IT: {len(it)}/107 Provinzen befuellt, unmatched: {it_unmatched}")
 
     regions = {**fr, **es, **it}
+
+    print("Berechne 10-km-Grid fuer Feinauflösung ...")
+    raw_points = {"FR": fr_points, "ES": es_points, "IT": it_points}
+    grid = {c: compute_grid(c, pts) for c, pts in raw_points.items()}
+    for c, cells in grid.items():
+        print(f"{c}: {len(cells)} Gitterzellen aus {len(raw_points[c])} Tankstellen")
+
+    heatmap_out = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "radius_km": RADIUS_KM,
+        "grid_spacing_deg": GRID_SPACING_DEG,
+        "note": "Preis je Gitterzelle = Durchschnitt aller Tankstellen im 10-km-Umkreis um den Zellmittelpunkt.",
+        "cells": {
+            c: [{"lat": la, "lon": lo, "price_eur_per_l": p, "n_stations": n} for la, lo, p, n in cells]
+            for c, cells in grid.items()
+        },
+    }
+    HEATMAP_OUT_PATH.write_text(json.dumps(heatmap_out, ensure_ascii=False), encoding="utf-8")
+    print(f"Wrote {HEATMAP_OUT_PATH}")
 
     all_ids = {f["properties"]["id"] for f in json.loads(GEO_PATH.read_text())["features"]}
     missing = sorted(all_ids - regions.keys())

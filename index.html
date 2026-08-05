@@ -84,6 +84,20 @@
   }
   #back-btn:hover { background: var(--page-plane); }
 
+  #heat-toggle-btn {
+    display: none;
+    margin-top: 10px;
+    margin-left: 8px;
+    font-size: 12.5px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-primary);
+    cursor: pointer;
+  }
+  #heat-toggle-btn:hover { background: var(--page-plane); }
+
   #legend {
     bottom: 20px; left: 16px;
     padding: 12px 16px 14px;
@@ -181,9 +195,10 @@
 
 <div id="title-panel" class="panel">
   <h1>Benzinpreis-Heatmap Europa</h1>
-  <p>Kraftstoff E10 (Euro-super 95), Verbraucherpreis inkl. Steuern. Frankreich, Spanien und Italien klickbar für Regionsebene.</p>
+  <p>Kraftstoff E10 (Euro-super 95), Verbraucherpreis inkl. Steuern. Frankreich, Spanien und Italien klickbar für Regionsebene und 10-km-Feinauflösung.</p>
   <div class="meta" id="meta-text">Lade Daten…</div>
   <button id="back-btn">← Zurück zur Länderansicht</button>
+  <button id="heat-toggle-btn">Feinauflösung (10 km)</button>
   <button id="table-toggle">Als Tabelle</button>
 </div>
 

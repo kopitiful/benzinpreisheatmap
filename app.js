@@ -52,11 +52,96 @@ L.control.zoom({ position: "topright" }).addTo(map);
 
 let countryLayer = null;
 let regionLayer = null;
+let heatLayer = null;
 let countryPrices = null;
 let regionPrices = null;
+let heatmapData = null;
+let currentRegionCountry = null;
 
 const backBtn = document.getElementById("back-btn");
+const heatToggleBtn = document.getElementById("heat-toggle-btn");
 const metaText = document.getElementById("meta-text");
+
+// Canvas overlay rendering a smooth "average price within 10 km" heatmap from
+// a precomputed grid (see scripts/fetch_regional_prices.py: compute_grid()).
+// Colors reuse the same sequential blue scale as the choropleth views so all
+// three zoom levels stay visually consistent.
+class GridHeatLayer {
+  constructor(cells) {
+    this.cells = cells;
+    this.canvas = null;
+    this._onRedraw = this._redraw.bind(this);
+    this._raf = null;
+  }
+
+  addTo(map) {
+    this.map = map;
+    this.canvas = document.createElement("canvas");
+    Object.assign(this.canvas.style, {
+      position: "absolute", left: "0", top: "0",
+      pointerEvents: "none", zIndex: 400,
+    });
+    map.getContainer().appendChild(this.canvas);
+    map.on("move zoom resize", this._scheduleRedraw, this);
+    this._redraw();
+    return this;
+  }
+
+  remove() {
+    if (!this.map) return;
+    this.map.off("move zoom resize", this._scheduleRedraw, this);
+    this.canvas.remove();
+    this.map = null;
+  }
+
+  _scheduleRedraw() {
+    if (this._raf) return;
+    this._raf = requestAnimationFrame(() => {
+      this._raf = null;
+      this._redraw();
+    });
+  }
+
+  _redraw() {
+    if (!this.map) return;
+    const size = this.map.getSize();
+    this.canvas.width = size.x;
+    this.canvas.height = size.y;
+    this.canvas.style.width = size.x + "px";
+    this.canvas.style.height = size.y + "px";
+
+    if (!this._offscreen) this._offscreen = document.createElement("canvas");
+    this._offscreen.width = size.x;
+    this._offscreen.height = size.y;
+    const octx = this._offscreen.getContext("2d");
+    octx.clearRect(0, 0, size.x, size.y);
+
+    // Paint each grid cell as a solid, slightly overlapping disc — a blocky mosaic
+    // with no alpha-stacking artifacts — then blur the whole raster once so it
+    // reads as one continuous gradient instead of a pile of translucent dots.
+    let maxRadiusPx = 8;
+    for (const cell of this.cells) {
+      const p = this.map.latLngToContainerPoint([cell.lat, cell.lon]);
+      if (p.x < -60 || p.y < -60 || p.x > size.x + 60 || p.y > size.y + 60) continue;
+      const metersPerPixel =
+        (156543.03392 * Math.cos((cell.lat * Math.PI) / 180)) / Math.pow(2, this.map.getZoom());
+      const radiusPx = Math.max(4, (10000 / metersPerPixel) * 0.75);
+      maxRadiusPx = Math.max(maxRadiusPx, radiusPx);
+      octx.fillStyle = colorScale(cell.price_eur_per_l);
+      octx.beginPath();
+      octx.arc(p.x, p.y, radiusPx, 0, Math.PI * 2);
+      octx.fill();
+    }
+
+    const ctx = this.canvas.getContext("2d");
+    ctx.clearRect(0, 0, size.x, size.y);
+    ctx.filter = `blur(${Math.round(maxRadiusPx * 0.5)}px)`;
+    ctx.globalAlpha = 0.82;
+    ctx.drawImage(this._offscreen, 0, 0);
+    ctx.filter = "none";
+    ctx.globalAlpha = 1;
+  }
+}
 
 function fmtPrice(v) {
   return v == null ? "keine Daten" : v.toFixed(3).replace(".", ",") + " €/l";
@@ -154,17 +239,57 @@ async function showRegions(countryCode, clickedLayer) {
   regionLayer.addTo(map);
   map.fitBounds(regionLayer.getBounds(), { padding: [30, 30] });
 
+  currentRegionCountry = countryCode;
   backBtn.style.display = "inline-block";
+  heatToggleBtn.style.display = "inline-block";
+  heatToggleBtn.textContent = "Feinauflösung (10 km)";
 }
 
-function showCountries() {
+async function showHeat(countryCode) {
+  if (!heatmapData) {
+    const res = await fetch("data/heatmap_points.json");
+    heatmapData = await res.json();
+  }
+  const cells = heatmapData.cells[countryCode] || [];
   if (regionLayer) {
     map.removeLayer(regionLayer);
     regionLayer = null;
   }
+  heatLayer = new GridHeatLayer(cells).addTo(map);
+  heatToggleBtn.textContent = "Regionen anzeigen";
+}
+
+function backToRegions(countryCode) {
+  if (heatLayer) {
+    heatLayer.remove();
+    heatLayer = null;
+  }
+  regionLayer.addTo(map);
+  heatToggleBtn.textContent = "Feinauflösung (10 km)";
+}
+
+heatToggleBtn.addEventListener("click", () => {
+  if (heatLayer) {
+    backToRegions(currentRegionCountry);
+  } else {
+    showHeat(currentRegionCountry);
+  }
+});
+
+function showCountries() {
+  if (heatLayer) {
+    heatLayer.remove();
+    heatLayer = null;
+  }
+  if (regionLayer) {
+    map.removeLayer(regionLayer);
+    regionLayer = null;
+  }
+  currentRegionCountry = null;
   countryLayer.addTo(map);
   map.setView([54, 15], 4);
   backBtn.style.display = "none";
+  heatToggleBtn.style.display = "none";
 }
 
 backBtn.addEventListener("click", showCountries);
