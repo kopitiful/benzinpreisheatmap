@@ -2,84 +2,84 @@
   "source": "https://energy.ec.europa.eu/data-and-analysis/weekly-oil-bulletin_en",
   "fuel": "Euro-super 95 (E10)",
   "unit": "EUR / 1000 l",
-  "date": "2026-08-03",
-  "fetched_at": "2026-08-06T10:45:43.101091+00:00",
+  "date": "2026-08-10",
+  "fetched_at": "2026-08-13T09:18:26.000510+00:00",
   "countries": {
     "AT": {
       "name": "Österreich",
-      "price_eur_per_l": 1.838
+      "price_eur_per_l": 1.721
     },
     "BE": {
       "name": "Belgien",
-      "price_eur_per_l": 1.8827
+      "price_eur_per_l": 1.8139
     },
     "BG": {
       "name": "Bulgarien",
-      "price_eur_per_l": 1.5333
+      "price_eur_per_l": 1.533
     },
     "CY": {
       "name": "Zypern",
-      "price_eur_per_l": 1.5612
+      "price_eur_per_l": 1.5935
     },
     "CZ": {
       "name": "Tschechien",
-      "price_eur_per_l": 1.7444
+      "price_eur_per_l": 1.7031
     },
     "DE": {
       "name": "Deutschland",
-      "price_eur_per_l": 2.184
+      "price_eur_per_l": 2.143
     },
     "DK": {
       "name": "Dänemark",
-      "price_eur_per_l": 2.4589
+      "price_eur_per_l": 2.3248
     },
     "EE": {
       "name": "Estland",
-      "price_eur_per_l": 1.812
+      "price_eur_per_l": 1.717
     },
     "ES": {
       "name": "Spanien",
-      "price_eur_per_l": 1.687
+      "price_eur_per_l": 1.7029
     },
     "FI": {
       "name": "Finnland",
-      "price_eur_per_l": 2.1964
+      "price_eur_per_l": 2.1651
     },
     "FR": {
       "name": "Frankreich",
-      "price_eur_per_l": 2.0659
+      "price_eur_per_l": 2.0141
     },
     "EL": {
       "name": "Griechenland",
-      "price_eur_per_l": 2.02
+      "price_eur_per_l": 1.98
     },
     "HR": {
       "name": "Kroatien",
-      "price_eur_per_l": 1.691
+      "price_eur_per_l": 1.685
     },
     "HU": {
       "name": "Ungarn",
-      "price_eur_per_l": 1.6474
+      "price_eur_per_l": 1.5816
     },
     "IE": {
       "name": "Irland",
-      "price_eur_per_l": 1.8173
+      "price_eur_per_l": 1.8371
     },
     "IT": {
       "name": "Italien",
-      "price_eur_per_l": 1.9923
+      "price_eur_per_l": 1.9926
     },
     "LT": {
       "name": "Litauen",
-      "price_eur_per_l": 1.8005
+      "price_eur_per_l": 1.756
     },
     "LU": {
       "name": "Luxemburg",
-      "price_eur_per_l": 1.708
+      "price_eur_per_l": 1.619
     },
     "LV": {
       "name": "Lettland",
-      "price_eur_per_l": 1.874
+      "price_eur_per_l": 1.802
     },
     "MT": {
       "name": "Malta",
@@ -87,31 +87,31 @@
     },
     "NL": {
       "name": "Niederlande",
-      "price_eur_per_l": 2.3697
+      "price_eur_per_l": 2.2901
     },
     "PL": {
       "name": "Polen",
-      "price_eur_per_l": 1.7559
+      "price_eur_per_l": 1.6962
     },
     "PT": {
       "name": "Portugal",
-      "price_eur_per_l": 1.982
+      "price_eur_per_l": 1.896
     },
     "RO": {
       "name": "Rumänien",
-      "price_eur_per_l": 1.8027
+      "price_eur_per_l": 1.7911
     },
     "SE": {
       "name": "Schweden",
-      "price_eur_per_l": 1.4525
+      "price_eur_per_l": 1.3076
     },
     "SI": {
       "name": "Slowenien",
-      "price_eur_per_l": 1.6494
+      "price_eur_per_l": 1.6186
     },
     "SK": {
       "name": "Slowakei",
-      "price_eur_per_l": 1.761
+      "price_eur_per_l": 1.701
     }
   }
 }

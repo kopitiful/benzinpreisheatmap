@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T10:46:53.589067+00:00",
+  "generated_at": "2026-08-13T09:19:14.676563+00:00",
   "sources": {
     "FR": "https://data.economie.gouv.fr (prix-carburants, E10-Direktwert)",
     "ES": "https://sedeaplicaciones.minetur.gob.es (Gasolina 95 E5, E10 in ES kaum gelabelt)",
@@ -9,679 +9,679 @@
     "FRE23": {
       "name": "Somme",
       "country": "FR",
-      "price_eur_per_l": 1.9906,
-      "n_stations": 86,
-      "fuel_used": "E10"
-    },
-    "FRJ13": {
-      "name": "Hérault",
-      "country": "FR",
-      "price_eur_per_l": 1.9961,
-      "n_stations": 136,
-      "fuel_used": "E10"
-    },
-    "FRI12": {
-      "name": "Gironde",
-      "country": "FR",
-      "price_eur_per_l": 1.9969,
-      "n_stations": 182,
-      "fuel_used": "E10"
-    },
-    "FRK24": {
-      "name": "Isère",
-      "country": "FR",
-      "price_eur_per_l": 2.0055,
-      "n_stations": 157,
-      "fuel_used": "E10"
-    },
-    "FR105": {
-      "name": "Hauts-de-Seine",
-      "country": "FR",
-      "price_eur_per_l": 2.0219,
-      "n_stations": 61,
+      "price_eur_per_l": 1.9799,
+      "n_stations": 85,
       "fuel_used": "E10"
     },
     "FRC12": {
       "name": "Nièvre",
       "country": "FR",
-      "price_eur_per_l": 2.0332,
+      "price_eur_per_l": 2.0153,
       "n_stations": 38,
       "fuel_used": "E10"
     },
-    "FRI13": {
-      "name": "Landes",
+    "FRJ13": {
+      "name": "Hérault",
       "country": "FR",
-      "price_eur_per_l": 2.014,
-      "n_stations": 76,
+      "price_eur_per_l": 2.0079,
+      "n_stations": 137,
       "fuel_used": "E10"
     },
-    "FRC21": {
-      "name": "Doubs",
+    "FRK24": {
+      "name": "Isère",
       "country": "FR",
-      "price_eur_per_l": 2.0464,
-      "n_stations": 64,
-      "fuel_used": "E10"
-    },
-    "FR108": {
-      "name": "Val-d’Oise",
-      "country": "FR",
-      "price_eur_per_l": 2.0016,
-      "n_stations": 99,
-      "fuel_used": "E10"
-    },
-    "FR106": {
-      "name": "Seine-Saint-Denis",
-      "country": "FR",
-      "price_eur_per_l": 2.0027,
-      "n_stations": 80,
+      "price_eur_per_l": 2.0113,
+      "n_stations": 156,
       "fuel_used": "E10"
     },
     "FRL03": {
       "name": "Alpes-Maritimes",
       "country": "FR",
-      "price_eur_per_l": 2.0187,
-      "n_stations": 122,
+      "price_eur_per_l": 2.024,
+      "n_stations": 123,
+      "fuel_used": "E10"
+    },
+    "FRI12": {
+      "name": "Gironde",
+      "country": "FR",
+      "price_eur_per_l": 1.9805,
+      "n_stations": 183,
+      "fuel_used": "E10"
+    },
+    "FR105": {
+      "name": "Hauts-de-Seine",
+      "country": "FR",
+      "price_eur_per_l": 2.0215,
+      "n_stations": 62,
+      "fuel_used": "E10"
+    },
+    "FRC21": {
+      "name": "Doubs",
+      "country": "FR",
+      "price_eur_per_l": 2.0321,
+      "n_stations": 67,
+      "fuel_used": "E10"
+    },
+    "FR108": {
+      "name": "Val-d’Oise",
+      "country": "FR",
+      "price_eur_per_l": 2.0003,
+      "n_stations": 98,
+      "fuel_used": "E10"
+    },
+    "FR106": {
+      "name": "Seine-Saint-Denis",
+      "country": "FR",
+      "price_eur_per_l": 2.0065,
+      "n_stations": 79,
       "fuel_used": "E10"
     },
     "FRJ22": {
       "name": "Aveyron",
       "country": "FR",
-      "price_eur_per_l": 1.9973,
+      "price_eur_per_l": 2.0096,
       "n_stations": 52,
+      "fuel_used": "E10"
+    },
+    "FRI13": {
+      "name": "Landes",
+      "country": "FR",
+      "price_eur_per_l": 1.9978,
+      "n_stations": 77,
       "fuel_used": "E10"
     },
     "FRL02": {
       "name": "Hautes-Alpes",
       "country": "FR",
-      "price_eur_per_l": 1.9975,
-      "n_stations": 31,
+      "price_eur_per_l": 1.9992,
+      "n_stations": 33,
       "fuel_used": "E10"
     },
     "FRC14": {
       "name": "Yonne",
       "country": "FR",
-      "price_eur_per_l": 2.0406,
-      "n_stations": 57,
+      "price_eur_per_l": 2.0271,
+      "n_stations": 58,
       "fuel_used": "E10"
     },
     "FRH04": {
       "name": "Morbihan",
       "country": "FR",
-      "price_eur_per_l": 1.9766,
-      "n_stations": 110,
-      "fuel_used": "E10"
-    },
-    "FRL05": {
-      "name": "Var",
-      "country": "FR",
-      "price_eur_per_l": 1.997,
-      "n_stations": 152,
-      "fuel_used": "E10"
-    },
-    "FRE11": {
-      "name": "Nord",
-      "country": "FR",
-      "price_eur_per_l": 1.9857,
-      "n_stations": 214,
+      "price_eur_per_l": 1.9594,
+      "n_stations": 107,
       "fuel_used": "E10"
     },
     "FRE22": {
       "name": "Oise",
       "country": "FR",
-      "price_eur_per_l": 1.9762,
+      "price_eur_per_l": 1.9697,
+      "n_stations": 94,
+      "fuel_used": "E10"
+    },
+    "FRE11": {
+      "name": "Nord",
+      "country": "FR",
+      "price_eur_per_l": 1.9678,
+      "n_stations": 213,
+      "fuel_used": "E10"
+    },
+    "FRL05": {
+      "name": "Var",
+      "country": "FR",
+      "price_eur_per_l": 2.009,
+      "n_stations": 154,
+      "fuel_used": "E10"
+    },
+    "FRK28": {
+      "name": "Haute-Savoie",
+      "country": "FR",
+      "price_eur_per_l": 2.0303,
       "n_stations": 94,
       "fuel_used": "E10"
     },
     "FRL01": {
       "name": "Alpes-de-Haute-Provence",
       "country": "FR",
-      "price_eur_per_l": 2.0093,
+      "price_eur_per_l": 2.0111,
       "n_stations": 43,
-      "fuel_used": "E10"
-    },
-    "FRK22": {
-      "name": "Ardèche",
-      "country": "FR",
-      "price_eur_per_l": 2.0024,
-      "n_stations": 48,
-      "fuel_used": "E10"
-    },
-    "FRK28": {
-      "name": "Haute-Savoie",
-      "country": "FR",
-      "price_eur_per_l": 2.0349,
-      "n_stations": 92,
       "fuel_used": "E10"
     },
     "FR102": {
       "name": "Seine-et-Marne",
       "country": "FR",
-      "price_eur_per_l": 1.9932,
-      "n_stations": 151,
+      "price_eur_per_l": 1.9863,
+      "n_stations": 153,
+      "fuel_used": "E10"
+    },
+    "FRK22": {
+      "name": "Ardèche",
+      "country": "FR",
+      "price_eur_per_l": 1.9948,
+      "n_stations": 50,
       "fuel_used": "E10"
     },
     "FRC11": {
       "name": "Côte-d’Or",
       "country": "FR",
-      "price_eur_per_l": 2.036,
-      "n_stations": 88,
+      "price_eur_per_l": 2.025,
+      "n_stations": 91,
       "fuel_used": "E10"
     },
     "FRI11": {
       "name": "Dordogne",
       "country": "FR",
-      "price_eur_per_l": 1.9837,
+      "price_eur_per_l": 1.9699,
       "n_stations": 67,
       "fuel_used": "E10"
     },
     "FRJ28": {
       "name": "Tarn-et-Garonne",
       "country": "FR",
-      "price_eur_per_l": 2.0173,
-      "n_stations": 52,
+      "price_eur_per_l": 2.0126,
+      "n_stations": 53,
+      "fuel_used": "E10"
+    },
+    "FRJ12": {
+      "name": "Gard",
+      "country": "FR",
+      "price_eur_per_l": 2.0086,
+      "n_stations": 111,
       "fuel_used": "E10"
     },
     "FR104": {
       "name": "Essonne",
       "country": "FR",
-      "price_eur_per_l": 1.9933,
-      "n_stations": 112,
+      "price_eur_per_l": 1.9863,
+      "n_stations": 116,
+      "fuel_used": "E10"
+    },
+    "FRI21": {
+      "name": "Corrèze",
+      "country": "FR",
+      "price_eur_per_l": 1.9836,
+      "n_stations": 47,
       "fuel_used": "E10"
     },
     "FRL04": {
       "name": "Bouches-du-Rhône",
       "country": "FR",
-      "price_eur_per_l": 2.0014,
-      "n_stations": 235,
+      "price_eur_per_l": 2.0047,
+      "n_stations": 237,
       "fuel_used": "E10"
     },
     "FRK11": {
       "name": "Allier",
       "country": "FR",
-      "price_eur_per_l": 2.02,
-      "n_stations": 60,
+      "price_eur_per_l": 2.0083,
+      "n_stations": 63,
       "fuel_used": "E10"
     },
     "FRI15": {
       "name": "Pyrénées-Atlantiques",
       "country": "FR",
-      "price_eur_per_l": 2.0052,
-      "n_stations": 84,
+      "price_eur_per_l": 1.9803,
+      "n_stations": 87,
       "fuel_used": "E10"
     },
     "FRD11": {
       "name": "Calvados",
       "country": "FR",
-      "price_eur_per_l": 1.9964,
-      "n_stations": 80,
+      "price_eur_per_l": 1.9759,
+      "n_stations": 83,
       "fuel_used": "E10"
     },
     "FRC22": {
       "name": "Jura",
       "country": "FR",
-      "price_eur_per_l": 2.0078,
-      "n_stations": 47,
-      "fuel_used": "E10"
-    },
-    "FR103": {
-      "name": "Yvelines",
-      "country": "FR",
-      "price_eur_per_l": 1.9907,
-      "n_stations": 128,
-      "fuel_used": "E10"
-    },
-    "FRI34": {
-      "name": "Vienne",
-      "country": "FR",
-      "price_eur_per_l": 2.0113,
-      "n_stations": 59,
-      "fuel_used": "E10"
-    },
-    "FRB01": {
-      "name": "Cher",
-      "country": "FR",
-      "price_eur_per_l": 2.0224,
-      "n_stations": 37,
+      "price_eur_per_l": 2.0032,
+      "n_stations": 52,
       "fuel_used": "E10"
     },
     "FRH02": {
       "name": "Finistère",
       "country": "FR",
-      "price_eur_per_l": 1.9782,
-      "n_stations": 107,
+      "price_eur_per_l": 1.952,
+      "n_stations": 109,
       "fuel_used": "E10"
     },
-    "FRD12": {
-      "name": "Manche",
+    "FR103": {
+      "name": "Yvelines",
       "country": "FR",
-      "price_eur_per_l": 2.0087,
-      "n_stations": 76,
+      "price_eur_per_l": 1.9896,
+      "n_stations": 130,
+      "fuel_used": "E10"
+    },
+    "FRI34": {
+      "name": "Vienne",
+      "country": "FR",
+      "price_eur_per_l": 2.0011,
+      "n_stations": 60,
+      "fuel_used": "E10"
+    },
+    "FRB01": {
+      "name": "Cher",
+      "country": "FR",
+      "price_eur_per_l": 2.0116,
+      "n_stations": 38,
       "fuel_used": "E10"
     },
     "FRI23": {
       "name": "Haute-Vienne",
       "country": "FR",
-      "price_eur_per_l": 2.022,
-      "n_stations": 66,
+      "price_eur_per_l": 1.9963,
+      "n_stations": 67,
       "fuel_used": "E10"
     },
-    "FRK13": {
-      "name": "Haute-Loire",
+    "FRD12": {
+      "name": "Manche",
       "country": "FR",
-      "price_eur_per_l": 1.9972,
-      "n_stations": 31,
+      "price_eur_per_l": 1.9759,
+      "n_stations": 74,
       "fuel_used": "E10"
     },
     "FRK26": {
       "name": "Rhône",
       "country": "FR",
-      "price_eur_per_l": 2.0069,
-      "n_stations": 174,
+      "price_eur_per_l": 2.0093,
+      "n_stations": 175,
       "fuel_used": "E10"
     },
     "FRF34": {
       "name": "Vosges",
       "country": "FR",
-      "price_eur_per_l": 2.0459,
-      "n_stations": 59,
+      "price_eur_per_l": 2.0482,
+      "n_stations": 56,
+      "fuel_used": "E10"
+    },
+    "FRK13": {
+      "name": "Haute-Loire",
+      "country": "FR",
+      "price_eur_per_l": 1.9884,
+      "n_stations": 31,
       "fuel_used": "E10"
     },
     "FR101": {
       "name": "Paris",
       "country": "FR",
-      "price_eur_per_l": 2.0343,
+      "price_eur_per_l": 2.0374,
       "n_stations": 38,
       "fuel_used": "E10"
     },
     "FRK23": {
       "name": "Drôme",
       "country": "FR",
-      "price_eur_per_l": 2.0104,
-      "n_stations": 94,
+      "price_eur_per_l": 2.0145,
+      "n_stations": 95,
       "fuel_used": "E10"
     },
     "FRJ15": {
       "name": "Pyrénées-Orientales",
       "country": "FR",
-      "price_eur_per_l": 1.9924,
-      "n_stations": 63,
+      "price_eur_per_l": 1.9982,
+      "n_stations": 62,
       "fuel_used": "E10"
     },
     "FRF21": {
       "name": "Ardennes",
       "country": "FR",
-      "price_eur_per_l": 2.0169,
+      "price_eur_per_l": 1.9793,
       "n_stations": 35,
-      "fuel_used": "E10"
-    },
-    "FRF11": {
-      "name": "Bas-Rhin",
-      "country": "FR",
-      "price_eur_per_l": 2.0733,
-      "n_stations": 107,
       "fuel_used": "E10"
     },
     "FRK27": {
       "name": "Savoie",
       "country": "FR",
-      "price_eur_per_l": 2.0346,
-      "n_stations": 64,
+      "price_eur_per_l": 2.0395,
+      "n_stations": 65,
+      "fuel_used": "E10"
+    },
+    "FRF11": {
+      "name": "Bas-Rhin",
+      "country": "FR",
+      "price_eur_per_l": 2.0823,
+      "n_stations": 100,
       "fuel_used": "E10"
     },
     "FRM01": {
       "name": "Corse-du-Sud",
       "country": "FR",
-      "price_eur_per_l": 2.003,
+      "price_eur_per_l": 2.001,
       "n_stations": 59,
       "fuel_used": "SP95 (E10 an diesen Stationen nicht gemeldet)"
     },
     "FR107": {
       "name": "Val-de-Marne",
       "country": "FR",
-      "price_eur_per_l": 2.0192,
-      "n_stations": 76,
+      "price_eur_per_l": 2.0252,
+      "n_stations": 74,
       "fuel_used": "E10"
     },
     "FRJ27": {
       "name": "Tarn",
       "country": "FR",
-      "price_eur_per_l": 1.9937,
+      "price_eur_per_l": 1.9884,
       "n_stations": 54,
       "fuel_used": "E10"
     },
     "FRC13": {
       "name": "Saône-et-Loire",
       "country": "FR",
-      "price_eur_per_l": 2.0124,
+      "price_eur_per_l": 2.0123,
       "n_stations": 92,
       "fuel_used": "E10"
     },
     "FRB04": {
       "name": "Indre-et-Loire",
       "country": "FR",
-      "price_eur_per_l": 1.9966,
-      "n_stations": 59,
+      "price_eur_per_l": 1.997,
+      "n_stations": 62,
       "fuel_used": "E10"
     },
     "FRK14": {
       "name": "Puy-de-Dôme",
       "country": "FR",
-      "price_eur_per_l": 2.0057,
-      "n_stations": 99,
+      "price_eur_per_l": 1.9939,
+      "n_stations": 101,
       "fuel_used": "E10"
     },
     "FRF23": {
       "name": "Marne",
       "country": "FR",
-      "price_eur_per_l": 2.0055,
+      "price_eur_per_l": 1.9833,
       "n_stations": 75,
-      "fuel_used": "E10"
-    },
-    "FRJ12": {
-      "name": "Gard",
-      "country": "FR",
-      "price_eur_per_l": 2.0024,
-      "n_stations": 106,
-      "fuel_used": "E10"
-    },
-    "FRJ23": {
-      "name": "Haute-Garonne",
-      "country": "FR",
-      "price_eur_per_l": 1.9993,
-      "n_stations": 168,
       "fuel_used": "E10"
     },
     "FRG03": {
       "name": "Mayenne",
       "country": "FR",
-      "price_eur_per_l": 1.9921,
+      "price_eur_per_l": 1.9692,
       "n_stations": 33,
       "fuel_used": "E10"
     },
     "FRF32": {
       "name": "Meuse",
       "country": "FR",
-      "price_eur_per_l": 2.0269,
+      "price_eur_per_l": 1.9885,
       "n_stations": 28,
+      "fuel_used": "E10"
+    },
+    "FRJ23": {
+      "name": "Haute-Garonne",
+      "country": "FR",
+      "price_eur_per_l": 1.9926,
+      "n_stations": 169,
       "fuel_used": "E10"
     },
     "FRE12": {
       "name": "Pas-de-Calais",
       "country": "FR",
-      "price_eur_per_l": 1.9859,
-      "n_stations": 184,
+      "price_eur_per_l": 1.9672,
+      "n_stations": 182,
       "fuel_used": "E10"
     },
     "FRD22": {
       "name": "Seine-Maritime",
       "country": "FR",
-      "price_eur_per_l": 1.9855,
-      "n_stations": 123,
+      "price_eur_per_l": 1.9732,
+      "n_stations": 125,
       "fuel_used": "E10"
     },
     "FRK25": {
       "name": "Loire",
       "country": "FR",
-      "price_eur_per_l": 2.0157,
-      "n_stations": 94,
+      "price_eur_per_l": 2.0151,
+      "n_stations": 95,
       "fuel_used": "E10"
     },
     "FRG01": {
       "name": "Loire-Atlantique",
       "country": "FR",
-      "price_eur_per_l": 1.9753,
+      "price_eur_per_l": 1.9536,
       "n_stations": 138,
       "fuel_used": "E10"
     },
     "FRB06": {
       "name": "Loiret",
       "country": "FR",
-      "price_eur_per_l": 2.0133,
-      "n_stations": 87,
+      "price_eur_per_l": 1.9807,
+      "n_stations": 90,
       "fuel_used": "E10"
     },
     "FRJ25": {
       "name": "Lot",
       "country": "FR",
-      "price_eur_per_l": 2.0102,
+      "price_eur_per_l": 1.9928,
       "n_stations": 52,
       "fuel_used": "E10"
     },
     "FRC23": {
       "name": "Haute-Saône",
       "country": "FR",
-      "price_eur_per_l": 2.0656,
-      "n_stations": 36,
+      "price_eur_per_l": 1.9991,
+      "n_stations": 38,
       "fuel_used": "E10"
     },
     "FRF24": {
       "name": "Haute-Marne",
       "country": "FR",
-      "price_eur_per_l": 2.0317,
+      "price_eur_per_l": 2.0179,
       "n_stations": 38,
       "fuel_used": "E10"
     },
     "FRF31": {
       "name": "Meurthe-et-Moselle",
       "country": "FR",
-      "price_eur_per_l": 2.0391,
-      "n_stations": 64,
+      "price_eur_per_l": 2.0229,
+      "n_stations": 63,
       "fuel_used": "E10"
     },
     "FRF33": {
       "name": "Moselle",
       "country": "FR",
-      "price_eur_per_l": 2.0414,
-      "n_stations": 101,
+      "price_eur_per_l": 2.0335,
+      "n_stations": 97,
       "fuel_used": "E10"
     },
     "FRM02": {
       "name": "Haute-Corse",
       "country": "FR",
-      "price_eur_per_l": 2.0225,
+      "price_eur_per_l": 2.0165,
       "n_stations": 63,
       "fuel_used": "SP95 (E10 an diesen Stationen nicht gemeldet)"
     },
     "FRI32": {
       "name": "Charente-Maritime",
       "country": "FR",
-      "price_eur_per_l": 1.9739,
+      "price_eur_per_l": 1.9762,
       "n_stations": 95,
       "fuel_used": "E10"
     },
     "FRI22": {
       "name": "Creuse",
       "country": "FR",
-      "price_eur_per_l": 2.0247,
+      "price_eur_per_l": 2.0118,
       "n_stations": 25,
       "fuel_used": "E10"
     },
     "FRH01": {
       "name": "Côtes-d’Armor",
       "country": "FR",
-      "price_eur_per_l": 1.9713,
-      "n_stations": 84,
+      "price_eur_per_l": 1.9496,
+      "n_stations": 87,
       "fuel_used": "E10"
     },
     "FRJ11": {
       "name": "Aude",
       "country": "FR",
-      "price_eur_per_l": 2.0132,
-      "n_stations": 71,
+      "price_eur_per_l": 2.0089,
+      "n_stations": 70,
       "fuel_used": "E10"
     },
     "FRH03": {
       "name": "Ille-et-Vilaine",
       "country": "FR",
-      "price_eur_per_l": 1.9782,
+      "price_eur_per_l": 1.9535,
       "n_stations": 121,
       "fuel_used": "E10"
     },
     "FRB03": {
       "name": "Indre",
       "country": "FR",
-      "price_eur_per_l": 1.994,
+      "price_eur_per_l": 1.9787,
       "n_stations": 34,
       "fuel_used": "E10"
     },
     "FRJ14": {
       "name": "Lozère",
       "country": "FR",
-      "price_eur_per_l": 2.018,
+      "price_eur_per_l": 2.0321,
       "n_stations": 24,
       "fuel_used": "E10"
     },
     "FRD13": {
       "name": "Orne",
       "country": "FR",
-      "price_eur_per_l": 2.0131,
-      "n_stations": 30,
+      "price_eur_per_l": 1.9781,
+      "n_stations": 35,
       "fuel_used": "E10"
     },
     "FRF22": {
       "name": "Aube",
       "country": "FR",
-      "price_eur_per_l": 1.9904,
+      "price_eur_per_l": 1.9828,
       "n_stations": 48,
       "fuel_used": "E10"
     },
     "FRG02": {
       "name": "Maine-et-Loire",
       "country": "FR",
-      "price_eur_per_l": 2.0027,
-      "n_stations": 86,
+      "price_eur_per_l": 1.9823,
+      "n_stations": 85,
       "fuel_used": "E10"
     },
     "FRK12": {
       "name": "Cantal",
       "country": "FR",
-      "price_eur_per_l": 2.0148,
+      "price_eur_per_l": 1.9995,
       "n_stations": 26,
-      "fuel_used": "E10"
-    },
-    "FRI21": {
-      "name": "Corrèze",
-      "country": "FR",
-      "price_eur_per_l": 2.0112,
-      "n_stations": 46,
       "fuel_used": "E10"
     },
     "FRG05": {
       "name": "Vendée",
       "country": "FR",
-      "price_eur_per_l": 1.9789,
+      "price_eur_per_l": 1.9509,
       "n_stations": 88,
       "fuel_used": "E10"
     },
     "FRB05": {
       "name": "Loir-et-Cher",
       "country": "FR",
-      "price_eur_per_l": 2.0232,
-      "n_stations": 48,
+      "price_eur_per_l": 2.0116,
+      "n_stations": 46,
       "fuel_used": "E10"
     },
     "FRL06": {
       "name": "Vaucluse",
       "country": "FR",
-      "price_eur_per_l": 2.0068,
-      "n_stations": 88,
+      "price_eur_per_l": 2.0116,
+      "n_stations": 86,
       "fuel_used": "E10"
     },
     "FRI31": {
       "name": "Charente",
       "country": "FR",
-      "price_eur_per_l": 1.9933,
+      "price_eur_per_l": 1.9707,
       "n_stations": 54,
       "fuel_used": "E10"
     },
     "FRF12": {
       "name": "Haut-Rhin",
       "country": "FR",
-      "price_eur_per_l": 2.0818,
-      "n_stations": 71,
+      "price_eur_per_l": 2.0883,
+      "n_stations": 69,
       "fuel_used": "E10"
     },
     "FRD21": {
       "name": "Eure",
       "country": "FR",
-      "price_eur_per_l": 1.9957,
-      "n_stations": 75,
-      "fuel_used": "E10"
-    },
-    "FRG04": {
-      "name": "Sarthe",
-      "country": "FR",
-      "price_eur_per_l": 2.0163,
-      "n_stations": 75,
-      "fuel_used": "E10"
-    },
-    "FRJ21": {
-      "name": "Ariège",
-      "country": "FR",
-      "price_eur_per_l": 2.0215,
-      "n_stations": 31,
-      "fuel_used": "E10"
-    },
-    "FRK21": {
-      "name": "Ain",
-      "country": "FR",
-      "price_eur_per_l": 1.9943,
-      "n_stations": 88,
-      "fuel_used": "E10"
-    },
-    "FRI33": {
-      "name": "Deux-Sèvres",
-      "country": "FR",
-      "price_eur_per_l": 1.9963,
-      "n_stations": 50,
+      "price_eur_per_l": 1.9705,
+      "n_stations": 77,
       "fuel_used": "E10"
     },
     "FRJ26": {
       "name": "Hautes-Pyrénées",
       "country": "FR",
-      "price_eur_per_l": 2.013,
-      "n_stations": 37,
+      "price_eur_per_l": 1.9881,
+      "n_stations": 38,
+      "fuel_used": "E10"
+    },
+    "FRJ21": {
+      "name": "Ariège",
+      "country": "FR",
+      "price_eur_per_l": 2.0135,
+      "n_stations": 31,
+      "fuel_used": "E10"
+    },
+    "FRG04": {
+      "name": "Sarthe",
+      "country": "FR",
+      "price_eur_per_l": 1.9973,
+      "n_stations": 79,
+      "fuel_used": "E10"
+    },
+    "FRK21": {
+      "name": "Ain",
+      "country": "FR",
+      "price_eur_per_l": 1.9982,
+      "n_stations": 87,
+      "fuel_used": "E10"
+    },
+    "FRI33": {
+      "name": "Deux-Sèvres",
+      "country": "FR",
+      "price_eur_per_l": 1.9823,
+      "n_stations": 50,
       "fuel_used": "E10"
     },
     "FRI14": {
       "name": "Lot-et-Garonne",
       "country": "FR",
-      "price_eur_per_l": 2.0017,
-      "n_stations": 62,
+      "price_eur_per_l": 1.9768,
+      "n_stations": 64,
       "fuel_used": "E10"
     },
     "FRB02": {
       "name": "Eure-et-Loir",
       "country": "FR",
-      "price_eur_per_l": 2.0006,
-      "n_stations": 62,
+      "price_eur_per_l": 1.9968,
+      "n_stations": 64,
       "fuel_used": "E10"
     },
     "FRE21": {
       "name": "Aisne",
       "country": "FR",
-      "price_eur_per_l": 2.0097,
-      "n_stations": 65,
+      "price_eur_per_l": 1.9929,
+      "n_stations": 67,
       "fuel_used": "E10"
     },
     "FRC24": {
       "name": "Territoire de Belfort",
       "country": "FR",
-      "price_eur_per_l": 2.0541,
+      "price_eur_per_l": 2.0681,
       "n_stations": 7,
       "fuel_used": "E10"
     },
     "FRJ24": {
       "name": "Gers",
       "country": "FR",
-      "price_eur_per_l": 2.0216,
+      "price_eur_per_l": 1.9897,
       "n_stations": 38,
       "fuel_used": "E10"
     },
     "ES421": {
       "name": "Albacete",
       "country": "ES",
-      "price_eur_per_l": 1.7063,
+      "price_eur_per_l": 1.7011,
       "n_stations": 143,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
@@ -695,7 +695,7 @@
     "ES611": {
       "name": "Almería",
       "country": "ES",
-      "price_eur_per_l": 1.769,
+      "price_eur_per_l": 1.719,
       "n_stations": 1,
       "fuel_used": "E10"
     },
@@ -709,21 +709,21 @@
     "ES120": {
       "name": "Asturias",
       "country": "ES",
-      "price_eur_per_l": 1.859,
+      "price_eur_per_l": 1.849,
       "n_stations": 3,
       "fuel_used": "E10"
     },
     "ES411": {
       "name": "Ávila",
       "country": "ES",
-      "price_eur_per_l": 1.742,
+      "price_eur_per_l": 1.7402,
       "n_stations": 72,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
     "ES431": {
       "name": "Badajoz",
       "country": "ES",
-      "price_eur_per_l": 1.7104,
+      "price_eur_per_l": 1.7027,
       "n_stations": 240,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
@@ -758,43 +758,43 @@
     "ES213": {
       "name": "Bizkaia",
       "country": "ES",
-      "price_eur_per_l": 1.7432,
-      "n_stations": 125,
+      "price_eur_per_l": 1.7361,
+      "n_stations": 126,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
     "ES412": {
       "name": "Burgos",
       "country": "ES",
-      "price_eur_per_l": 1.7399,
+      "price_eur_per_l": 1.7422,
       "n_stations": 134,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
     "ES432": {
       "name": "Cáceres",
       "country": "ES",
-      "price_eur_per_l": 1.7269,
-      "n_stations": 147,
+      "price_eur_per_l": 1.7212,
+      "n_stations": 148,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
     "ES612": {
       "name": "Cádiz",
       "country": "ES",
-      "price_eur_per_l": 1.7603,
-      "n_stations": 286,
+      "price_eur_per_l": 1.7501,
+      "n_stations": 287,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
     "ES130": {
       "name": "Cantabria",
       "country": "ES",
-      "price_eur_per_l": 1.7472,
+      "price_eur_per_l": 1.7364,
       "n_stations": 166,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
     "ES522": {
       "name": "Castellón/Castelló",
       "country": "ES",
-      "price_eur_per_l": 1.6796,
-      "n_stations": 192,
+      "price_eur_per_l": 1.6827,
+      "n_stations": 191,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
     "ES630": {
@@ -814,29 +814,29 @@
     "ES613": {
       "name": "Córdoba",
       "country": "ES",
-      "price_eur_per_l": 1.7553,
+      "price_eur_per_l": 1.732,
       "n_stations": 3,
       "fuel_used": "E10"
     },
     "ES111": {
       "name": "A Coruña",
       "country": "ES",
-      "price_eur_per_l": 1.848,
+      "price_eur_per_l": 1.834,
       "n_stations": 2,
       "fuel_used": "E10"
     },
     "ES423": {
       "name": "Cuenca",
       "country": "ES",
-      "price_eur_per_l": 1.889,
+      "price_eur_per_l": 1.859,
       "n_stations": 1,
       "fuel_used": "E10"
     },
     "ES212": {
       "name": "Gipuzkoa",
       "country": "ES",
-      "price_eur_per_l": 1.7409,
-      "n_stations": 131,
+      "price_eur_per_l": 1.7393,
+      "n_stations": 130,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
     "ES512": {
@@ -849,14 +849,14 @@
     "ES614": {
       "name": "Granada",
       "country": "ES",
-      "price_eur_per_l": 1.6944,
+      "price_eur_per_l": 1.6923,
       "n_stations": 276,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
     "ES424": {
       "name": "Guadalajara",
       "country": "ES",
-      "price_eur_per_l": 1.7417,
+      "price_eur_per_l": 1.7351,
       "n_stations": 87,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
@@ -870,57 +870,57 @@
     "ES241": {
       "name": "Huesca",
       "country": "ES",
-      "price_eur_per_l": 1.697,
+      "price_eur_per_l": 1.6948,
       "n_stations": 112,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
     "ES616": {
       "name": "Jaén",
       "country": "ES",
-      "price_eur_per_l": 1.7103,
+      "price_eur_per_l": 1.7037,
       "n_stations": 208,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
     "ES413": {
       "name": "León",
       "country": "ES",
-      "price_eur_per_l": 1.655,
+      "price_eur_per_l": 1.629,
       "n_stations": 1,
       "fuel_used": "E10"
     },
     "ES513": {
       "name": "Lleida",
       "country": "ES",
-      "price_eur_per_l": 1.6435,
-      "n_stations": 166,
+      "price_eur_per_l": 1.6456,
+      "n_stations": 162,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
     "ES112": {
       "name": "Lugo",
       "country": "ES",
-      "price_eur_per_l": 1.7424,
-      "n_stations": 125,
+      "price_eur_per_l": 1.7419,
+      "n_stations": 126,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
     "ES300": {
       "name": "Madrid",
       "country": "ES",
-      "price_eur_per_l": 1.894,
+      "price_eur_per_l": 1.899,
       "n_stations": 2,
       "fuel_used": "E10"
     },
     "ES617": {
       "name": "Málaga",
       "country": "ES",
-      "price_eur_per_l": 1.7519,
+      "price_eur_per_l": 1.7446,
       "n_stations": 303,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
     "ES640": {
       "name": "Melilla",
       "country": "ES",
-      "price_eur_per_l": 1.4353,
-      "n_stations": 11,
+      "price_eur_per_l": 1.4503,
+      "n_stations": 12,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
     "ES620": {
@@ -933,49 +933,49 @@
     "ES220": {
       "name": "Navarra",
       "country": "ES",
-      "price_eur_per_l": 1.839,
+      "price_eur_per_l": 1.869,
       "n_stations": 1,
       "fuel_used": "E10"
     },
     "ES113": {
       "name": "Ourense",
       "country": "ES",
-      "price_eur_per_l": 1.736,
-      "n_stations": 89,
+      "price_eur_per_l": 1.73,
+      "n_stations": 87,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
     "ES414": {
       "name": "Palencia",
       "country": "ES",
-      "price_eur_per_l": 1.7645,
+      "price_eur_per_l": 1.7646,
       "n_stations": 66,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
     "ES114": {
       "name": "Pontevedra",
       "country": "ES",
-      "price_eur_per_l": 1.729,
-      "n_stations": 1,
-      "fuel_used": "E10"
+      "price_eur_per_l": 1.7158,
+      "n_stations": 224,
+      "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
     "ES230": {
       "name": "La Rioja",
       "country": "ES",
-      "price_eur_per_l": 1.7039,
+      "price_eur_per_l": 1.6984,
       "n_stations": 80,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
     "ES415": {
       "name": "Salamanca",
       "country": "ES",
-      "price_eur_per_l": 1.7113,
+      "price_eur_per_l": 1.7111,
       "n_stations": 104,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
     "ES416": {
       "name": "Segovia",
       "country": "ES",
-      "price_eur_per_l": 1.7523,
+      "price_eur_per_l": 1.7424,
       "n_stations": 75,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
@@ -989,805 +989,805 @@
     "ES417": {
       "name": "Soria",
       "country": "ES",
-      "price_eur_per_l": 1.689,
+      "price_eur_per_l": 1.6928,
       "n_stations": 42,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
     "ES514": {
       "name": "Tarragona",
       "country": "ES",
-      "price_eur_per_l": 1.849,
+      "price_eur_per_l": 1.829,
       "n_stations": 1,
       "fuel_used": "E10"
     },
     "ES242": {
       "name": "Teruel",
       "country": "ES",
-      "price_eur_per_l": 1.6925,
-      "n_stations": 65,
+      "price_eur_per_l": 1.6932,
+      "n_stations": 64,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
     "ES425": {
       "name": "Toledo",
       "country": "ES",
-      "price_eur_per_l": 1.7272,
-      "n_stations": 241,
+      "price_eur_per_l": 1.7263,
+      "n_stations": 240,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
     "ES523": {
       "name": "Valencia/València",
       "country": "ES",
-      "price_eur_per_l": 1.6617,
+      "price_eur_per_l": 1.6783,
       "n_stations": 3,
       "fuel_used": "E10"
     },
     "ES418": {
       "name": "Valladolid",
       "country": "ES",
-      "price_eur_per_l": 1.7252,
-      "n_stations": 147,
+      "price_eur_per_l": 1.7257,
+      "n_stations": 145,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
     "ES419": {
       "name": "Zamora",
       "country": "ES",
-      "price_eur_per_l": 1.7174,
+      "price_eur_per_l": 1.7169,
       "n_stations": 79,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
     "ES243": {
       "name": "Zaragoza",
       "country": "ES",
-      "price_eur_per_l": 1.7051,
-      "n_stations": 219,
+      "price_eur_per_l": 1.7075,
+      "n_stations": 218,
       "fuel_used": "Super 95 E5 (E10 in Spanien kaum verfügbar)"
     },
     "ITH56": {
       "name": "Ferrara",
       "country": "IT",
-      "price_eur_per_l": 2.0268,
-      "n_stations": 238,
+      "price_eur_per_l": 2.0084,
+      "n_stations": 237,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITC11": {
       "name": "Torino",
       "country": "IT",
-      "price_eur_per_l": 2.0511,
-      "n_stations": 991,
+      "price_eur_per_l": 2.0378,
+      "n_stations": 981,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITI18": {
       "name": "Arezzo",
       "country": "IT",
-      "price_eur_per_l": 2.0734,
+      "price_eur_per_l": 2.063,
       "n_stations": 242,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITC49": {
       "name": "Lodi",
       "country": "IT",
-      "price_eur_per_l": 2.0565,
+      "price_eur_per_l": 2.0462,
       "n_stations": 111,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITC33": {
       "name": "Genova",
       "country": "IT",
-      "price_eur_per_l": 2.0699,
+      "price_eur_per_l": 2.0531,
       "n_stations": 338,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITI14": {
       "name": "Firenze",
       "country": "IT",
-      "price_eur_per_l": 2.0679,
-      "n_stations": 473,
+      "price_eur_per_l": 2.0574,
+      "n_stations": 471,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITI19": {
       "name": "Siena",
       "country": "IT",
-      "price_eur_per_l": 2.0754,
+      "price_eur_per_l": 2.0663,
       "n_stations": 211,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITH51": {
       "name": "Piacenza",
       "country": "IT",
-      "price_eur_per_l": 2.0595,
-      "n_stations": 218,
+      "price_eur_per_l": 2.0474,
+      "n_stations": 216,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITI43": {
       "name": "Roma",
       "country": "IT",
-      "price_eur_per_l": 2.0508,
-      "n_stations": 2089,
+      "price_eur_per_l": 2.0377,
+      "n_stations": 2092,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITC4C": {
       "name": "Milano",
       "country": "IT",
-      "price_eur_per_l": 2.0491,
-      "n_stations": 1055,
+      "price_eur_per_l": 2.0395,
+      "n_stations": 1033,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITF47": {
       "name": "Bari",
       "country": "IT",
-      "price_eur_per_l": 2.0774,
-      "n_stations": 599,
+      "price_eur_per_l": 2.0674,
+      "n_stations": 597,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITC12": {
       "name": "Vercelli",
       "country": "IT",
-      "price_eur_per_l": 2.0462,
+      "price_eur_per_l": 2.0259,
       "n_stations": 118,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITF33": {
       "name": "Napoli",
       "country": "IT",
-      "price_eur_per_l": 2.0361,
-      "n_stations": 1290,
+      "price_eur_per_l": 2.0217,
+      "n_stations": 1288,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITF48": {
       "name": "Barletta-Andria-Trani",
       "country": "IT",
-      "price_eur_per_l": 2.0724,
+      "price_eur_per_l": 2.056,
       "n_stations": 166,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITF11": {
       "name": "L’Aquila",
       "country": "IT",
-      "price_eur_per_l": 2.0482,
+      "price_eur_per_l": 2.033,
       "n_stations": 235,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITF34": {
       "name": "Avellino",
       "country": "IT",
-      "price_eur_per_l": 2.0412,
-      "n_stations": 345,
+      "price_eur_per_l": 2.0306,
+      "n_stations": 340,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITF61": {
       "name": "Cosenza",
       "country": "IT",
-      "price_eur_per_l": 2.0797,
-      "n_stations": 432,
+      "price_eur_per_l": 2.071,
+      "n_stations": 433,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITF63": {
       "name": "Catanzaro",
       "country": "IT",
-      "price_eur_per_l": 2.0706,
+      "price_eur_per_l": 2.0604,
       "n_stations": 244,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITC47": {
       "name": "Brescia",
       "country": "IT",
-      "price_eur_per_l": 2.0555,
-      "n_stations": 808,
+      "price_eur_per_l": 2.0444,
+      "n_stations": 804,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITC18": {
       "name": "Alessandria",
       "country": "IT",
-      "price_eur_per_l": 2.0553,
+      "price_eur_per_l": 2.0409,
       "n_stations": 307,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITH55": {
       "name": "Bologna",
       "country": "IT",
-      "price_eur_per_l": 2.047,
-      "n_stations": 506,
+      "price_eur_per_l": 2.0345,
+      "n_stations": 503,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITI32": {
       "name": "Ancona",
       "country": "IT",
-      "price_eur_per_l": 2.0498,
+      "price_eur_per_l": 2.0371,
       "n_stations": 331,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITC32": {
       "name": "Savona",
       "country": "IT",
-      "price_eur_per_l": 2.0687,
+      "price_eur_per_l": 2.0527,
       "n_stations": 181,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITH54": {
       "name": "Modena",
       "country": "IT",
-      "price_eur_per_l": 2.0491,
-      "n_stations": 411,
+      "price_eur_per_l": 2.0346,
+      "n_stations": 409,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITI13": {
       "name": "Pistoia",
       "country": "IT",
-      "price_eur_per_l": 2.0613,
-      "n_stations": 180,
+      "price_eur_per_l": 2.0512,
+      "n_stations": 178,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITC48": {
       "name": "Pavia",
       "country": "IT",
-      "price_eur_per_l": 2.0469,
-      "n_stations": 292,
+      "price_eur_per_l": 2.0338,
+      "n_stations": 293,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITH31": {
       "name": "Verona",
       "country": "IT",
-      "price_eur_per_l": 2.0418,
-      "n_stations": 510,
+      "price_eur_per_l": 2.0287,
+      "n_stations": 507,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITH52": {
       "name": "Parma",
       "country": "IT",
-      "price_eur_per_l": 2.0593,
+      "price_eur_per_l": 2.0461,
       "n_stations": 278,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITI17": {
       "name": "Pisa",
       "country": "IT",
-      "price_eur_per_l": 2.0605,
+      "price_eur_per_l": 2.0495,
       "n_stations": 314,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITH20": {
       "name": "Trento",
       "country": "IT",
-      "price_eur_per_l": 2.0529,
-      "n_stations": 319,
-      "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
-    },
-    "ITH37": {
-      "name": "Rovigo",
-      "country": "IT",
-      "price_eur_per_l": 1.9923,
-      "n_stations": 198,
+      "price_eur_per_l": 2.0382,
+      "n_stations": 318,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITF65": {
       "name": "Reggio di Calabria",
       "country": "IT",
-      "price_eur_per_l": 2.076,
-      "n_stations": 319,
+      "price_eur_per_l": 2.0662,
+      "n_stations": 318,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITH35": {
       "name": "Venezia",
       "country": "IT",
-      "price_eur_per_l": 2.0428,
-      "n_stations": 397,
+      "price_eur_per_l": 2.0263,
+      "n_stations": 398,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITH33": {
       "name": "Belluno",
       "country": "IT",
-      "price_eur_per_l": 2.0433,
+      "price_eur_per_l": 2.0231,
       "n_stations": 151,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITI16": {
       "name": "Livorno",
       "country": "IT",
-      "price_eur_per_l": 2.0689,
+      "price_eur_per_l": 2.0581,
       "n_stations": 222,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITC4D": {
       "name": "Monza e della Brianza",
       "country": "IT",
-      "price_eur_per_l": 2.0417,
-      "n_stations": 327,
+      "price_eur_per_l": 2.0334,
+      "n_stations": 323,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITF64": {
       "name": "Vibo Valentia",
       "country": "IT",
-      "price_eur_per_l": 2.0691,
+      "price_eur_per_l": 2.0569,
       "n_stations": 93,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITF31": {
       "name": "Caserta",
       "country": "IT",
-      "price_eur_per_l": 2.0362,
-      "n_stations": 602,
+      "price_eur_per_l": 2.0223,
+      "n_stations": 597,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITI31": {
       "name": "Pesaro e Urbino",
       "country": "IT",
-      "price_eur_per_l": 2.0536,
-      "n_stations": 240,
+      "price_eur_per_l": 2.0445,
+      "n_stations": 241,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITH59": {
       "name": "Rimini",
       "country": "IT",
-      "price_eur_per_l": 2.0487,
-      "n_stations": 201,
+      "price_eur_per_l": 2.0338,
+      "n_stations": 199,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITF12": {
       "name": "Teramo",
       "country": "IT",
-      "price_eur_per_l": 2.056,
-      "n_stations": 231,
+      "price_eur_per_l": 2.0445,
+      "n_stations": 229,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITI45": {
       "name": "Frosinone",
       "country": "IT",
-      "price_eur_per_l": 2.0234,
+      "price_eur_per_l": 2.0071,
       "n_stations": 400,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITF14": {
       "name": "Chieti",
       "country": "IT",
-      "price_eur_per_l": 2.0548,
+      "price_eur_per_l": 2.0425,
       "n_stations": 298,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITI35": {
       "name": "Fermo",
       "country": "IT",
-      "price_eur_per_l": 2.0412,
+      "price_eur_per_l": 2.0329,
       "n_stations": 143,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITC34": {
       "name": "La Spezia",
       "country": "IT",
-      "price_eur_per_l": 2.0676,
+      "price_eur_per_l": 2.0609,
       "n_stations": 124,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITG13": {
       "name": "Messina",
       "country": "IT",
-      "price_eur_per_l": 2.079,
-      "n_stations": 364,
+      "price_eur_per_l": 2.0712,
+      "n_stations": 363,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITI12": {
       "name": "Lucca",
       "country": "IT",
-      "price_eur_per_l": 2.0572,
+      "price_eur_per_l": 2.049,
       "n_stations": 291,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITC20": {
       "name": "Valle d’Aosta/Vallée d’Aoste",
       "country": "IT",
-      "price_eur_per_l": 2.0699,
+      "price_eur_per_l": 2.0621,
       "n_stations": 107,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITH32": {
       "name": "Vicenza",
       "country": "IT",
-      "price_eur_per_l": 2.0415,
+      "price_eur_per_l": 2.0289,
       "n_stations": 488,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITC17": {
       "name": "Asti",
       "country": "IT",
-      "price_eur_per_l": 2.0115,
-      "n_stations": 161,
+      "price_eur_per_l": 1.9858,
+      "n_stations": 162,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITG17": {
       "name": "Catania",
       "country": "IT",
-      "price_eur_per_l": 2.0607,
-      "n_stations": 685,
+      "price_eur_per_l": 2.0508,
+      "n_stations": 681,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITI22": {
       "name": "Terni",
       "country": "IT",
-      "price_eur_per_l": 2.0453,
+      "price_eur_per_l": 2.0404,
       "n_stations": 186,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITH36": {
       "name": "Padova",
       "country": "IT",
-      "price_eur_per_l": 2.031,
-      "n_stations": 500,
+      "price_eur_per_l": 2.0211,
+      "n_stations": 499,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITH34": {
       "name": "Treviso",
       "country": "IT",
-      "price_eur_per_l": 2.0302,
+      "price_eur_per_l": 2.0177,
       "n_stations": 473,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITH44": {
       "name": "Trieste",
       "country": "IT",
-      "price_eur_per_l": 2.0839,
+      "price_eur_per_l": 2.0822,
       "n_stations": 51,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITH57": {
       "name": "Ravenna",
       "country": "IT",
-      "price_eur_per_l": 2.0298,
+      "price_eur_per_l": 2.0172,
       "n_stations": 240,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITH42": {
       "name": "Udine",
       "country": "IT",
-      "price_eur_per_l": 2.0562,
+      "price_eur_per_l": 2.0395,
       "n_stations": 372,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITG2D": {
       "name": "Sassari",
       "country": "IT",
-      "price_eur_per_l": 2.067,
-      "n_stations": 311,
+      "price_eur_per_l": 2.0572,
+      "n_stations": 313,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITG2G": {
       "name": "Oristano",
       "country": "IT",
-      "price_eur_per_l": 2.0615,
+      "price_eur_per_l": 2.0512,
       "n_stations": 115,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITI44": {
       "name": "Latina",
       "country": "IT",
-      "price_eur_per_l": 2.0678,
+      "price_eur_per_l": 2.0556,
       "n_stations": 427,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITI41": {
       "name": "Viterbo",
       "country": "IT",
-      "price_eur_per_l": 2.0302,
+      "price_eur_per_l": 2.0217,
       "n_stations": 271,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITG2E": {
       "name": "Nuoro",
       "country": "IT",
-      "price_eur_per_l": 2.075,
+      "price_eur_per_l": 2.0603,
       "n_stations": 156,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITF32": {
       "name": "Benevento",
       "country": "IT",
-      "price_eur_per_l": 2.0402,
+      "price_eur_per_l": 2.0262,
       "n_stations": 237,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITC13": {
       "name": "Biella",
       "country": "IT",
-      "price_eur_per_l": 2.015,
-      "n_stations": 100,
+      "price_eur_per_l": 1.9955,
+      "n_stations": 99,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITC41": {
       "name": "Varese",
       "country": "IT",
-      "price_eur_per_l": 2.0494,
-      "n_stations": 370,
+      "price_eur_per_l": 2.0363,
+      "n_stations": 367,
+      "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
+    },
+    "ITH37": {
+      "name": "Rovigo",
+      "country": "IT",
+      "price_eur_per_l": 1.9759,
+      "n_stations": 195,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITI21": {
       "name": "Perugia",
       "country": "IT",
-      "price_eur_per_l": 2.0467,
+      "price_eur_per_l": 2.0402,
       "n_stations": 498,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITF51": {
       "name": "Potenza",
       "country": "IT",
-      "price_eur_per_l": 2.0616,
+      "price_eur_per_l": 2.0506,
       "n_stations": 267,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITH58": {
       "name": "Forlì-Cesena",
       "country": "IT",
-      "price_eur_per_l": 2.0276,
+      "price_eur_per_l": 2.0128,
       "n_stations": 237,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITF35": {
       "name": "Salerno",
       "country": "IT",
-      "price_eur_per_l": 2.0462,
-      "n_stations": 669,
+      "price_eur_per_l": 2.034,
+      "n_stations": 671,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITC4B": {
       "name": "Mantova",
       "country": "IT",
-      "price_eur_per_l": 2.042,
+      "price_eur_per_l": 2.0317,
       "n_stations": 281,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITH41": {
       "name": "Pordenone",
       "country": "IT",
-      "price_eur_per_l": 2.0542,
+      "price_eur_per_l": 2.0322,
       "n_stations": 184,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITG19": {
       "name": "Siracusa",
       "country": "IT",
-      "price_eur_per_l": 2.0725,
+      "price_eur_per_l": 2.0628,
       "n_stations": 282,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITF22": {
       "name": "Campobasso",
       "country": "IT",
-      "price_eur_per_l": 2.0643,
+      "price_eur_per_l": 2.0475,
       "n_stations": 165,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITF46": {
       "name": "Foggia",
       "country": "IT",
-      "price_eur_per_l": 2.075,
-      "n_stations": 349,
+      "price_eur_per_l": 2.0598,
+      "n_stations": 351,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITH10": {
       "name": "Bolzano-Bozen",
       "country": "IT",
-      "price_eur_per_l": 2.0672,
-      "n_stations": 248,
+      "price_eur_per_l": 2.0582,
+      "n_stations": 247,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITC46": {
       "name": "Bergamo",
       "country": "IT",
-      "price_eur_per_l": 2.0401,
-      "n_stations": 519,
+      "price_eur_per_l": 2.0277,
+      "n_stations": 515,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITG15": {
       "name": "Caltanissetta",
       "country": "IT",
-      "price_eur_per_l": 2.0506,
+      "price_eur_per_l": 2.0436,
       "n_stations": 158,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITC16": {
       "name": "Cuneo",
       "country": "IT",
-      "price_eur_per_l": 2.0475,
+      "price_eur_per_l": 2.032,
       "n_stations": 438,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITF45": {
       "name": "Lecce",
       "country": "IT",
-      "price_eur_per_l": 2.0762,
-      "n_stations": 641,
+      "price_eur_per_l": 2.0634,
+      "n_stations": 643,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITF62": {
       "name": "Crotone",
       "country": "IT",
-      "price_eur_per_l": 2.1054,
-      "n_stations": 85,
+      "price_eur_per_l": 2.101,
+      "n_stations": 87,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITF13": {
       "name": "Pescara",
       "country": "IT",
-      "price_eur_per_l": 2.0484,
+      "price_eur_per_l": 2.0328,
       "n_stations": 196,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITI11": {
       "name": "Massa-Carrara",
       "country": "IT",
-      "price_eur_per_l": 2.076,
+      "price_eur_per_l": 2.0695,
       "n_stations": 120,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITG18": {
       "name": "Ragusa",
       "country": "IT",
-      "price_eur_per_l": 2.0488,
-      "n_stations": 272,
+      "price_eur_per_l": 2.0432,
+      "n_stations": 270,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITF44": {
       "name": "Brindisi",
       "country": "IT",
-      "price_eur_per_l": 2.0629,
+      "price_eur_per_l": 2.0536,
       "n_stations": 276,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITG2F": {
       "name": "Cagliari",
       "country": "IT",
-      "price_eur_per_l": 2.0563,
+      "price_eur_per_l": 2.0429,
       "n_stations": 225,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITC31": {
       "name": "Imperia",
       "country": "IT",
-      "price_eur_per_l": 2.0727,
+      "price_eur_per_l": 2.0558,
       "n_stations": 113,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITG2H": {
       "name": "Sud Sardegna",
       "country": "IT",
-      "price_eur_per_l": 2.0573,
+      "price_eur_per_l": 2.0452,
       "n_stations": 231,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITH53": {
       "name": "Reggio nell’Emilia",
       "country": "IT",
-      "price_eur_per_l": 2.0303,
+      "price_eur_per_l": 2.0222,
       "n_stations": 286,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITI33": {
       "name": "Macerata",
       "country": "IT",
-      "price_eur_per_l": 2.0305,
-      "n_stations": 245,
+      "price_eur_per_l": 2.0217,
+      "n_stations": 243,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITI42": {
       "name": "Rieti",
       "country": "IT",
-      "price_eur_per_l": 2.0216,
+      "price_eur_per_l": 2.0136,
       "n_stations": 131,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITG12": {
       "name": "Palermo",
       "country": "IT",
-      "price_eur_per_l": 2.0913,
-      "n_stations": 667,
+      "price_eur_per_l": 2.0834,
+      "n_stations": 665,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITC15": {
       "name": "Novara",
       "country": "IT",
-      "price_eur_per_l": 2.0503,
+      "price_eur_per_l": 2.0378,
       "n_stations": 215,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITF43": {
       "name": "Taranto",
       "country": "IT",
-      "price_eur_per_l": 2.0834,
-      "n_stations": 303,
+      "price_eur_per_l": 2.073,
+      "n_stations": 301,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITC42": {
       "name": "Como",
       "country": "IT",
-      "price_eur_per_l": 2.037,
-      "n_stations": 191,
+      "price_eur_per_l": 2.019,
+      "n_stations": 186,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITI1A": {
       "name": "Grosseto",
       "country": "IT",
-      "price_eur_per_l": 2.0509,
+      "price_eur_per_l": 2.0372,
       "n_stations": 216,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITC43": {
       "name": "Lecco",
       "country": "IT",
-      "price_eur_per_l": 2.0445,
+      "price_eur_per_l": 2.0264,
       "n_stations": 143,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITC44": {
       "name": "Sondrio",
       "country": "IT",
-      "price_eur_per_l": 1.904,
+      "price_eur_per_l": 1.8934,
       "n_stations": 103,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITC4A": {
       "name": "Cremona",
       "country": "IT",
-      "price_eur_per_l": 2.05,
-      "n_stations": 224,
+      "price_eur_per_l": 2.0384,
+      "n_stations": 221,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITC14": {
       "name": "Verbano-Cusio-Ossola",
       "country": "IT",
-      "price_eur_per_l": 2.0729,
-      "n_stations": 88,
+      "price_eur_per_l": 2.0557,
+      "n_stations": 87,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITI15": {
       "name": "Prato",
       "country": "IT",
-      "price_eur_per_l": 2.083,
+      "price_eur_per_l": 2.0751,
       "n_stations": 112,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITF21": {
       "name": "Isernia",
       "country": "IT",
-      "price_eur_per_l": 2.0451,
+      "price_eur_per_l": 2.0354,
       "n_stations": 75,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITF52": {
       "name": "Matera",
       "country": "IT",
-      "price_eur_per_l": 2.065,
+      "price_eur_per_l": 2.0491,
       "n_stations": 128,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITG16": {
       "name": "Enna",
       "country": "IT",
-      "price_eur_per_l": 2.0392,
+      "price_eur_per_l": 2.0312,
       "n_stations": 99,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITI34": {
       "name": "Ascoli Piceno",
       "country": "IT",
-      "price_eur_per_l": 2.0508,
+      "price_eur_per_l": 2.0403,
       "n_stations": 139,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITG14": {
       "name": "Agrigento",
       "country": "IT",
-      "price_eur_per_l": 2.1004,
+      "price_eur_per_l": 2.0917,
       "n_stations": 188,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITG11": {
       "name": "Trapani",
       "country": "IT",
-      "price_eur_per_l": 2.0841,
-      "n_stations": 342,
+      "price_eur_per_l": 2.0742,
+      "n_stations": 341,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     },
     "ITH43": {
       "name": "Gorizia",
       "country": "IT",
-      "price_eur_per_l": 2.0538,
+      "price_eur_per_l": 2.0372,
       "n_stations": 58,
       "fuel_used": "Benzina (Super 95, meist E5 - kein separates E10-Label in Italien)"
     }
